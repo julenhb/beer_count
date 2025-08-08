@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">465296493992</string>
+    <string name="google_api_key" translatable="false">AIzaSyA86gegfUICz7XlL76Y2u9_feAFy1WGhU4</string>
+    <string name="google_app_id" translatable="false">1:465296493992:android:4058c8c0ded0ba86e4619d</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA86gegfUICz7XlL76Y2u9_feAFy1WGhU4</string>
+    <string name="google_storage_bucket" translatable="false">beer-count-17888.firebasestorage.app</string>
+    <string name="project_id" translatable="false">beer-count-17888</string>
+</resources>
