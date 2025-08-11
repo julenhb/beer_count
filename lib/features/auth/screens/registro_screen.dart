@@ -1,3 +1,4 @@
+import 'package:beer_count/features/auth/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:beer_count/data/services/firebase_auth_services.dart';
 import 'package:beer_count/data/models/usuario.dart';
@@ -94,6 +95,21 @@ class RegistroScreenState extends State<RegistroScreen> {
                   child:
                       Text(sError!, style: const TextStyle(color: Colors.red)),
                 ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("¿Ya tienes cuenta? "),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (_) => LoginScreen()),
+                      );
+                    },
+                    child: const Text("Inicia sesión"),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

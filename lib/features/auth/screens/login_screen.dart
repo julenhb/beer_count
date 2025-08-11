@@ -1,3 +1,6 @@
+import 'package:beer_count/features/auth/screens/auth_gate.dart';
+import 'package:beer_count/features/auth/screens/registro_screen.dart';
+import 'package:beer_count/features/consumicion/screens/consumo_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -38,6 +41,10 @@ class LoginScreenState extends State<LoginScreen> {
           .showSnackBar(const SnackBar(content: Text("Bienvenido!")));
 
       // TODO: Aquí es donde hay que meter la lógica para, después del logueo, navegar a la panalla "principal"
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const ConsumoScreen()),
+      );
     } on FirebaseAuthException catch (e) {
       setState(() {
         sError = e.message;
@@ -95,6 +102,21 @@ class LoginScreenState extends State<LoginScreen> {
                   child:
                       Text(sError!, style: const TextStyle(color: Colors.red)),
                 ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("¿No tienes cuenta? "),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (_) => RegistroScreen()),
+                      );
+                    },
+                    child: const Text("Regístrate"),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
